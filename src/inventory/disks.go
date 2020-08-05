@@ -55,7 +55,7 @@ func (d *disks) getDisks() []*models.Disk {
 		return ret
 	}
 	for _, disk := range blockInfo.Disks {
-		if disk.IsRemovable || disk.SizeBytes == 0 || disk.DriveType == ghw.DRIVE_TYPE_UNKNOWN {
+                if disk.IsRemovable || disk.SizeBytes == 0 || disk.BusType == ghw.BUS_TYPE_UNKNOWN {
 			continue
 		}
 		rec := models.Disk{
